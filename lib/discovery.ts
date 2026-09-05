@@ -5,8 +5,8 @@ export const whimsicalPicks = [
     "hook": "An actual lighthouse."
   },
   {
-    "id": "surplus-375700",
-    "hook": "Robots that delivered medication."
+    "id": "surplus-376310",
+    "hook": "A government snowmobile."
   },
   {
     "id": "surplus-376455",
@@ -69,8 +69,8 @@ export const whimsicalPicks = [
     "hook": "A microscope made for eye surgery."
   },
   {
-    "id": "surplus-376310",
-    "hook": "A government snowmobile."
+    "id": "surplus-375700",
+    "hook": "Robots that delivered medication."
   },
   {
     "id": "surplus-375803",
