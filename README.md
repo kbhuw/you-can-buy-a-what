@@ -1,6 +1,6 @@
 # You can buy a what?
 
-An independent government property and surplus discovery feed, with 15 handpicked unusual finds and a searchable full catalog.
+An independent government property and surplus discovery feed, with 20 handpicked unusual finds and a searchable full catalog.
 
 ## Development
 
