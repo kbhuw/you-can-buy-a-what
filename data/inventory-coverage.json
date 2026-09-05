@@ -1,0 +1,44 @@
+[
+  {
+    "agency": "GSA surplus",
+    "count": 1284,
+    "checkedAt": "2026-09-05T06:30:23.682318+00:00",
+    "note": "All active lots and previews. Historical closed surplus auctions excluded."
+  },
+  {
+    "agency": "U.S. Marshals",
+    "count": 81,
+    "checkedAt": "2026-09-05T06:30:23.682318+00:00",
+    "note": "80 real-estate listings plus the verified Marshals vessel auction. Other listings at mixed private/government contractors are excluded unless government provenance is confirmed."
+  },
+  {
+    "agency": "USDA",
+    "count": 23,
+    "checkedAt": "2026-09-05T06:30:23.682318+00:00",
+    "note": "All 24 source records; identical property rows combined."
+  },
+  {
+    "agency": "HUD",
+    "count": 873,
+    "checkedAt": "2026-09-05T06:30:23.682318+00:00",
+    "note": "All 873 listings across every state with inventory."
+  },
+  {
+    "agency": "BLM",
+    "count": 22,
+    "checkedAt": "2026-09-05T06:30:23.682318+00:00",
+    "note": "22 parcels in the posted Nevada sale matrix, including withdrawals; historical April 2026 offerings. The 2026 national realty-sale notices were also reviewed: other notices concern direct transfers to named buyers or planning, not open public auctions."
+  },
+  {
+    "agency": "FDIC",
+    "count": 2,
+    "checkedAt": "2026-09-05T06:30:23.682318+00:00",
+    "note": "Both property listings are pre-market. The bargain-property page has no inventory and the linked Seven Hills contractor reports no upcoming FDIC auctions."
+  },
+  {
+    "agency": "Treasury",
+    "count": 611,
+    "checkedAt": "2026-09-05T06:30:23.682318+00:00",
+    "note": "524 lots from the September 9\u201316 general-merchandise auction, 18 property-auction entries, 3 broker sales and 66 visible sale lots from both linked September 8 vehicle catalogs. Practice/instruction lots excluded. The national catalog counter exceeds its visible cards by 4; those records are not available in this snapshot."
+  }
+]
