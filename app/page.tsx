@@ -4,6 +4,7 @@ import {Search, Heart, MapPin, ArrowUpRight, Landmark, Menu, ShieldCheck, Chevro
 import {Sheet,SheetContent,SheetTitle,SheetDescription} from '@/components/ui/sheet';
 import {initialCatalog,money,type Property,type Catalog} from '@/lib/catalog';
 import {whimsicalPicks,sourceGuide} from '@/lib/discovery';
+import {useCatalogWebMCP} from '@/lib/webmcp';
 export default function Home(){
 const [collection,setCollection]=useState<'whimsical'|'all'>('whimsical');
 const pickMap=new Map<string,string>(whimsicalPicks.map(p=>[p.id,p.hook]));
@@ -17,6 +18,7 @@ async function refresh(){setRefreshing(true);try{const r=await fetch('/api/catal
 useEffect(()=>{void refresh();const id=setInterval(()=>void refresh(),60000);return()=>clearInterval(id)},[]);
 const [query,setQuery]=useState(''),[category,setCategory]=useState('All items'),[saved,setSaved]=useState<string[]>([]),[savedOnly,setSavedOnly]=useState(false),[selectedId,setSelectedId]=useState<string|null>(null),[status,setStatus]=useState('All sale types');
 useEffect(()=>setVisibleCount(48),[query,category,status,agency,savedOnly,collection]);
+useCatalogWebMCP({properties,saved,setSaved,showItem:setSelectedId});
 const selected=properties.find(p=>p.id===selectedId)||null;
 const setSelected=(p:Property|null)=>setSelectedId(p?.id??null);
 const toggle=(id:string)=>setSaved(x=>x.includes(id)?x.filter(a=>a!==id):[...x,id]);

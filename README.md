@@ -13,3 +13,36 @@ The catalog combines GSA real estate and surplus, Treasury, U.S. Marshals, USDA,
 `lib/discovery.ts` defines the handpicked collection, its display order and short introductions. The full catalog is not ranked for whimsy. All-items browsing shows published amounts first.
 
 Government and authorized-contractor listings govern eligibility, condition and sale terms. Starting bids are not purchase prices. This project is not affiliated with the U.S. government.
+
+## WebMCP
+
+Compatible browsers can discover six tools while this page is open:
+`search_items`, `get_whimsical_items`, `get_item`, `set_shortlist`,
+`get_shortlist`, and `show_item`. Search is read-only; showing an item and
+saving it update the same React state as the website controls. Shortlists
+last for the current page visit and reset on reload.
+
+The integration uses `document.modelContext.registerTool` with an
+AbortSignal for cleanup, plus the earlier `navigator.modelContext` API
+when available. Unsupported browsers retain normal browsing. No MCP server,
+API key, polyfill or additional service is required. Browser/agent WebMCP
+support must be enabled separately.
+
+Results include price type, source URL, restrictions and the record's check
+time. A bid is not a purchase price; these tools do not place bids or buy items.
+
+Browser checks (requires Python Playwright and its Chromium installation):
+
+```sh
+npm run build
+npm run start -- --port 4187
+# In another terminal:
+python3 tests/webmcp.py http://127.0.0.1:4187
+python3 tests/webmcp-native.py http://127.0.0.1:4187
+```
+
+The first suite uses API contract doubles for both API versions and checks
+unsupported-browser behavior. The second uses Chromium's native experimental
+WebMCP testing API, with experimental web platform features enabled.
+
+API reference: https://developer.chrome.com/docs/ai/webmcp/imperative-api
