@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 const title = 'You can buy a what?';
 const description = 'Lighthouses, museum jets and snowmobiles. Discover unusual government property for sale, with prices, official links and the fine print.';
 const url = 'https://www.kush.pw/you-can-buy-a-what';
-const image = {url: `${url}/share-image`, width:1200, height:630, type:'image/png', alt:'You can buy a what? Lighthouses. Museum jets. Snowmobiles. Made with puffle.ai.'};
+const image = {url: `${url}/cover-v2.png`, width:1200, height:630, type:'image/png', alt:'You can buy a what? Lighthouses. Museum jets. Snowmobiles. Made with puffle.ai.'};
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.kush.pw'),
   title, description,
