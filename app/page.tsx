@@ -4,6 +4,7 @@ import {Search, Heart, MapPin, ArrowUpRight, Landmark, Menu, ShieldCheck, Chevro
 import {Sheet,SheetContent,SheetTitle,SheetDescription} from '@/components/ui/sheet';
 import {initialCatalog,money,type Property,type Catalog} from '@/lib/catalog';
 import {whimsicalPicks,sourceGuide} from '@/lib/discovery';
+import {sitePath} from '@/lib/site';
 import {useCatalogWebMCP} from '@/lib/webmcp';
 export default function Home(){
 const [collection,setCollection]=useState<'whimsical'|'all'>('whimsical');
@@ -14,7 +15,7 @@ const [agency,setAgency]=useState('All sources'),[visibleCount,setVisibleCount]=
 const agencies=['All sources',...Array.from(new Set(properties.map(p=>p.agency||'GSA real estate')))];
 const categories=['All items',...Array.from(new Set(properties.map(p=>p.category))).sort()];
 const statuses=['All sale types',...Array.from(new Set(properties.map(p=>p.status)))];
-async function refresh(){setRefreshing(true);try{const r=await fetch('/api/catalog');if(!r.ok)throw new Error('Refresh failed');setCatalog(await r.json());}catch{setCatalog(c=>({...c,live:false,error:'Live bid refresh failed. Showing the last verified amounts and timestamps.'}));}finally{setRefreshing(false);}}
+async function refresh(){setRefreshing(true);try{const r=await fetch(sitePath('/api/catalog'));if(!r.ok)throw new Error('Refresh failed');setCatalog(await r.json());}catch{setCatalog(c=>({...c,live:false,error:'Live bid refresh failed. Showing the last verified amounts and timestamps.'}));}finally{setRefreshing(false);}}
 useEffect(()=>{void refresh();const id=setInterval(()=>void refresh(),60000);return()=>clearInterval(id)},[]);
 const [query,setQuery]=useState(''),[category,setCategory]=useState('All items'),[saved,setSaved]=useState<string[]>([]),[savedOnly,setSavedOnly]=useState(false),[selectedId,setSelectedId]=useState<string|null>(null),[status,setStatus]=useState('All sale types');
 useEffect(()=>setVisibleCount(48),[query,category,status,agency,savedOnly,collection]);

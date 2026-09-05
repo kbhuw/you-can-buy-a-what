@@ -1,5 +1,7 @@
 # You can buy a what?
 
+[Live site](https://kush.pw/you-can-buy-a-what/) · [Source code](https://github.com/kbhuw/you-can-buy-a-what)
+
 An independent government property and surplus discovery feed, with 20 handpicked unusual finds and a searchable full catalog.
 
 ## Development
@@ -37,8 +39,8 @@ Browser checks (requires Python Playwright and its Chromium installation):
 npm run build
 npm run start -- --port 4187
 # In another terminal:
-python3 tests/webmcp.py http://127.0.0.1:4187
-python3 tests/webmcp-native.py http://127.0.0.1:4187
+python3 tests/webmcp.py http://127.0.0.1:4187/you-can-buy-a-what
+python3 tests/webmcp-native.py http://127.0.0.1:4187/you-can-buy-a-what
 ```
 
 The first suite uses API contract doubles for both API versions and checks
@@ -46,3 +48,7 @@ unsupported-browser behavior. The second uses Chromium's native experimental
 WebMCP testing API, with experimental web platform features enabled.
 
 API reference: https://developer.chrome.com/docs/ai/webmcp/imperative-api
+
+## License
+
+App code is MIT licensed. Government listings, linked photos and documents remain subject to their original source terms; the MIT license does not grant rights to third-party material.

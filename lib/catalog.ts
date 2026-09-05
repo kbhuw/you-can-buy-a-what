@@ -1,3 +1,4 @@
+import {sitePath} from './site';
 import additional from '@/data/additional-inventory.json';
 import inventoryCoverage from '@/data/inventory-coverage.json';
 import disposition from '@/data/disposition.json';
@@ -37,7 +38,7 @@ export function assemble(auctions:Auction[],at:string,live:boolean):Catalog{
  entries.push({id:'boston-light',title:'Boston Light & Little Brewster Island',location:'Boston, Massachusetts',address:'Little Brewster Island, Boston Harbor, MA',category:'Lighthouses',spec:'Island · 6 structures · Historic lighthouse',status:'Eligible-entity transfer',price:0,priceLabel:'Acquisition cost',image:'https://www.gsa.gov/system/files/Boston%20Ligh.jpeg',disclaimer:'Only eligible public agencies, nonprofits, educational agencies and community development organizations may apply. Educational, park, recreational, cultural or historic preservation use is required; ownership comes with continuing responsibilities.',description:'Light Station Boston and Little Brewster Island are offered through the National Historic Lighthouse Preservation Act. The property includes the lighthouse, keeper’s house, boathouse and other supporting structures.',source:'https://disposal.gsa.gov/s/noticetypedetail?type=Lighthouse+Screening',documents:[{title:'Official Notice of Availability',url:'https://pd.my.salesforce.com/sfc/p/30000000dixP/a/SJ00000C4n4r/zBgtHcFHnEd8P0oTKBLb3yvdIDSPu2bCcmstRfluUnE'}],sourceKeys:['lighthouse:MA-0945-AA'],checkedAt});
  const rank:Record<string,number>={'Bidding open':0,'Coming soon':1,'Eligible-entity transfer':2,'Disposal listed':3,'Removal opportunity':3,'Disposition planned':4,'Federal transfer':3,'Under contract':5,'Auction ended':6,'Auction closed':6,'Sold':7,'Disposed':7};
  for(const entry of entries)entry.agency="GSA real estate";
- entries.push(...additional as Property[]);
+ entries.push(...(additional as Property[]).map(p=>({...p,image:p.image.startsWith('/')?sitePath(p.image):p.image}))); 
  entries.sort((a,b)=>(rank[a.status]??4)-(rank[b.status]??4)||a.title.localeCompare(b.title));
  return {properties:entries,checkedAt:at,live,inventoryCoverage,coverage:{auction:auctions.length,disposition:disposition.length,disposal:disposal.length,lighthouse:1}};
 }

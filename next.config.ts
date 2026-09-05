@@ -1,3 +1,9 @@
 import type { NextConfig } from 'next';
-const config:NextConfig={};
+import {basePath} from './lib/site';
+const config:NextConfig={
+  basePath,
+  async redirects() {
+    return [{source:'/',destination:basePath,permanent:false,basePath:false}];
+  },
+};
 export default config;
