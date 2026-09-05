@@ -12,8 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const title = 'You can buy a what?';
+const description = 'Lighthouses, museum jets and medication robots. Discover unusual government property for sale, with prices, official links and the fine print.';
+const url = 'https://www.kush.pw/you-can-buy-a-what';
+const image = {url: `${url}/share-image`, width:1200, height:630, type:'image/png', alt:'You can buy a what? Lighthouses. Museum jets. Medication robots. Made with puffle.ai.'};
 export const metadata: Metadata = {
-  title: 'You can buy a what? | Government property finds', description: 'Explore real federal properties, from lighthouses to courthouses. See sale status and the fine print.',
+  metadataBase: new URL('https://www.kush.pw'),
+  title, description,
+  alternates: {canonical:url},
+  openGraph: {type:'website',url,title,description,siteName:title,images:[image]},
+  twitter: {card:'summary_large_image',title,description,images:[image.url]},
 };
 
 export default function RootLayout({
