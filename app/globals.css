@@ -76,3 +76,5 @@ body {
 .curated-nav{display:none}@media(max-width:620px){main[data-collection="whimsical"] .heading{display:none}main[data-collection="whimsical"] .mobile-status{display:none}main[data-collection="whimsical"] .source-guide{margin-bottom:16px}main[data-collection="whimsical"] .collection-tabs{margin-bottom:12px}}
 
 footer{flex-wrap:wrap;gap:16px}.footer-tags{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.credit-tag{display:inline-flex;align-items:center;gap:5px;border:1px solid #dfe4e7;border-radius:999px;padding:7px 11px;background:#f6f8f9;color:#48545f;font-size:12px;text-decoration:none}.credit-tag strong{color:#243447}a.credit-tag:hover{background:#edf2f4;border-color:#aabac4}
+
+.puffle-banner{display:flex;justify-content:center;background:#fff3d6;border-bottom:1px solid #ecc77e;padding:10px 16px}.puffle-banner a{display:inline-flex;align-items:center;gap:7px;color:#243447;font-size:15px;text-decoration:none}.puffle-banner strong{font-size:19px;font-weight:800}.puffle-banner a:hover{text-decoration:underline;text-underline-offset:4px}
